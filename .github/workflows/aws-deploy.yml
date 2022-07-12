@@ -11,12 +11,12 @@ jobs:
         with:
           node-version: "14"
       
-      - name : AWS Configure
-        uses: actions/configure-aws-credentials@master
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
-          aws-resion: "us-east-1"
+      # - name : AWS Configure
+      #   uses: actions/configure-aws-credentials@master
+      #   with:
+      #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+      #     aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+      #     aws-resion: "us-east-1"
       
       - name: Change working directory
         run: cd data_ingestion_approver/
