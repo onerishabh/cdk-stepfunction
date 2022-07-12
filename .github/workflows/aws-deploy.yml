@@ -26,9 +26,9 @@ jobs:
         working-directory: ${{ env.iac-dir }}
       
       - name: Install dependcies
-        run: npm install && ls && cdk --version
+        run: yarn
         working-directory: ${{ env.iac-dir }}
 
       - name: Deploy Application
-        run: cdk deploy --require-approval never
+        run: yarn cdk deploy --require-approval never
         working-directory: ${{ env.iac-dir }}
