@@ -22,7 +22,7 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
       
       - name: Change working directory
-        run: npm install && ls
+        run: npm install && ls && cdk --version
         working-directory: ${{ env.iac-dir }}
 
       - name: Deploy Application
