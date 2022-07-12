@@ -9,7 +9,7 @@ jobs:
       
       - uses: actions/setup-node@v2
         with:
-          node-version: "14"
+          node-version: "16.15.1"
       
       # - name : AWS Configure
       #   uses: actions/configure-aws-credentials@master
@@ -19,7 +19,10 @@ jobs:
       #     aws-resion: "us-east-1"
       
       - name: Change working directory
-        run: cd data_ingestion_approver/
+        run: cd data_ingestion_approver/ && ls
       
       - name: Print working directory
-        run: pwd
+        run: pwd && ls
+      
+      - name: Print node and npm version
+        run: node -v && npm -v
