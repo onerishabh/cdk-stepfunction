@@ -24,9 +24,9 @@ jobs:
       - name : Install aws-cdk
         run : npm i aws-cdk
         working-directory: ${{ env.iac-dir }}
-     
+      
       - name: Install dependcies
-        run: npm install && ls &&
+        run: npm install && ls && cdk --version
         working-directory: ${{ env.iac-dir }}
 
       - name: Deploy Application
