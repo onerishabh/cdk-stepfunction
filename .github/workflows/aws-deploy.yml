@@ -26,5 +26,5 @@ jobs:
         working-directory: ${{ env.iac-dir }}
 
       - name: Deploy Application
-        run: cdk deply --require-approval never
+        run: cdk deploy --require-approval never
         working-directory: ${{ env.iac-dir }}
