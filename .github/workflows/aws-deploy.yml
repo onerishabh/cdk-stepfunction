@@ -19,7 +19,7 @@ jobs:
       #     aws-resion: "us-east-1"
       
       - name: Change working directory
-        run: ls
+        run: npm install && ls
         working-directory: data_ingestion_approver
       
       - name: Print working directory
