@@ -19,8 +19,7 @@ jobs:
       #     aws-resion: "us-east-1"
       
       - name: Change working directory
-        run: 
-          working-directory: data_ingestion_approver
+        working-directory: data_ingestion_approver
       
       - name: Print working directory
         run: pwd && ls
