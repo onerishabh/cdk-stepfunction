@@ -27,7 +27,7 @@ def lambda_handler(event, context):
         dynamo_client = boto3.client("dynamodb")
         op=[]
 
-        for item in scan_table(dynamo_client, TableName="DataIngestionApproverStack-UserTableBD4BF69E-FQL9EYOZVGTL"):
+        for item in scan_table(dynamo_client, TableName=os.environ["TABLE"]):
             op.append(item)
         
         res = []

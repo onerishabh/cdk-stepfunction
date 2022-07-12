@@ -124,7 +124,8 @@ export class DataIngestionApproverStack extends Stack {
       role: sf_ex_role
     });
 
-    trigger_wf.addEnvironment("STEP_FUNCTION", workflow.stateMachineArn)
+    trigger_wf.addEnvironment("STEP_FUNCTION", workflow.stateMachineArn);
+    trigger_wf.addEnvironment("TABLE", db_tb.tableName);
 
 
     new CfnOutput(this, "Function URL Api", {
