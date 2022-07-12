@@ -15,7 +15,7 @@ jobs:
           node-version: "16.15.1"
       
       - name : AWS Configure
-        uses: actions/configure-aws-credentials@master
+        uses: aws-actions/configure-aws-credentials@master
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
