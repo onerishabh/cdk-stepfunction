@@ -3,6 +3,9 @@ on: [workflow_dispatch]
 jobs:
   aws_cdk:
     runs-on: ubuntu-latest
+    env:
+      iac-dir: ./data_ingestion_approver
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -20,10 +23,6 @@ jobs:
       
       - name: Change working directory
         run: npm install && ls
-        working-directory: data_ingestion_approver
-      
-      - name: Print working directory
-        run: pwd && ls
-      
-      - name: Print node and npm version
-        run: node -v && npm -v
+        working-directory: ${{ env.iac-dir }}
+
+      - run: aws --version
