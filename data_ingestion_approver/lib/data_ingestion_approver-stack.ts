@@ -79,6 +79,7 @@ export class DataIngestionApproverStack extends Stack {
       code: Code.fromAsset("../lambda/addToDb/"),
       role: lambda_ex_role
     });
+    addToDB_lf.addEnvironment("TABLE", db_tb.tableName);
 
     const check_email_state = new LambdaInvoke(this, "CheckEmail",{
       lambdaFunction: check_email_lf,
@@ -122,6 +123,9 @@ export class DataIngestionApproverStack extends Stack {
       definition: definition,
       role: sf_ex_role
     });
+
+    trigger_wf.addEnvironment("STEP_FUNCTION", workflow.stateMachineArn)
+
 
     new CfnOutput(this, "Function URL Api", {
       value: func_url.url

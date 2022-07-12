@@ -1,9 +1,10 @@
 import json
 import boto3
+import os
 
 def lambda_handler(event, context):
     db = boto3.resource("dynamodb")
-    table = db.Table("DataIngestionApproverStack-UserTableBD4BF69E-FQL9EYOZVGTL")
+    table = db.Table(os.environ["TABLE"])
     
     response = table.put_item(
         Item = {

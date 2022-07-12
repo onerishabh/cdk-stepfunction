@@ -1,5 +1,6 @@
 import json
 import boto3
+import os
 
 def lambda_handler(event, context):
     if "queryStringParameters" in event:
@@ -15,7 +16,7 @@ def lambda_handler(event, context):
         client = boto3.client("stepfunctions")
         
         response = client.start_execution(
-            stateMachineArn='arn:aws:states:us-east-1:970023729013:stateMachine:Workflow193EF7C1-XKR13ncWzrkw',
+            stateMachineArn=os.environ["STEP_FUNCTION"],
             input=json.dumps(params)
         )
         return {
